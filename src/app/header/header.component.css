@@ -1,0 +1,21 @@
+.navbar .navbar-brand {
+  /* color: rgb(191, 30, 30); */
+  color: #f0f0f0;
+  font-weight: bold;
+  font-family: cursive;
+  cursor: pointer;
+}
+
+.navbar-nav .nav-link {
+  /* color: rgb(191, 30, 30); */
+  color: #f0f0f0;
+  font-family: cursive;
+  cursor: pointer;
+}
+
+@media (width <= 766px) {
+  #navbarNav {
+    border-radius: 5px;
+    background-color: #ffffff51;
+  }
+}

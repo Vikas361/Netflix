@@ -1,0 +1,37 @@
+<div *ngIf="movieList.length" class="container-fluid pt-5 pb-5 text-white d-md-flex align-items-center"
+    style="height: 100vh;" [style.background-image]="'url('+bgImage+')'">
+    <div class="row mx-auto h-md-75 movie-dtls-inner" *ngFor="let movie of movieList">
+        <div class="col-md-6 p-2 bg-secondary">
+            <iframe width="100%" height="100%" [src]="this.trailer" frameborder="0" allow="autoplay"
+                frameborder="0"></iframe>
+        </div>
+        <div class="col-md-6 bg-secondary">
+            <h1>{{movie.Name}}</h1>
+            <p><Strong>Movie Description: </Strong>{{movie.Description}}...</p>
+            <p><Strong>Movie StoryLine: </Strong>{{movie.StoryLine}}...</p>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="movieList2.length" class="container-fluid movie-dtls pt-5 pb-5 text-white d-md-flex align-items-center"
+    [ngStyle]="{'background-image': 'url('+bgImage+')'}">
+    <div class="row mx-auto m-1 movie-dtls-inner" *ngFor="let movie of movieList2">
+        <div class="col-md-6 mx-md-auto shadow-lg">
+            <div class="row">
+                <div class="col-md-4 p-2 bg-secondary d-flex align-items-center img-container">
+                    <img class="img-thumbnail movie-poster"
+                        src="https://image.tmdb.org/t/p/w185{{movieList2[0].poster_path}}" alt="">
+                </div>
+                <div class="col-md-8 bg-secondary d-flex align-items-center">
+                    <div>
+                        <h1>{{movie.title}}</h1>
+                        <p><Strong>Movie Description: </Strong>{{movie.overview}}...</p>
+                        <p><Strong>Movie StoryLine: </Strong>{{movie.popularity}}...</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

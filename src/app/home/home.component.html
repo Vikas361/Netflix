@@ -1,0 +1,56 @@
+<div class="main-div">
+    <div class="container-fluid px-0">
+        <div id="movieCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item" data-bs-interval="2000"
+                    *ngFor="let movie of trendingMoviesList; let index = index" [ngClass]="{active: index === 0}">
+                    <img *ngIf="showFullImg" [src]="movie.Image" class="d-block w-100" alt="..."
+                        (click)="movieDetail(movie, index, 'TrendingMovies')">
+                    <img *ngIf="!showFullImg" class="mobile-view-img" [src]="movie.PhoneImage"
+                        (click)="movieDetail(movie, index, 'TrendingMovies')">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>{{movie.Name}}</h3>
+                        <p>{{movie.Description}}</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#movieCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#movieCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="container-fluid py-4 text-white">
+        <h3>Latest Movies:</h3>
+        <div class="row top-movie-list">
+            <div class="top-movie-row ms-2 p-0 border rounded-2"
+                *ngFor="let latestMovie of latestMovies;let index = index">
+                <img class="rounded-2" [src]="imgPrefix + latestMovie.poster_path" alt=""
+                    (click)="movieDetail2(latestMovie, index, 'LatestMovies')">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-4 text-white">
+        <h3>Top Rated Movies:</h3>
+        <div class="row top-movie-list">
+            <div class="top-movie-row ms-2 p-0 border rounded-2"
+                *ngFor="let topMovie of topRatedMovie; let index = index">
+                <img class="rounded-2" [src]="imgPrefix + topMovie.poster_path"
+                    (click)="movieDetail2(topMovie, index, 'TopMovies')" alt="">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- <div class="row">
+        <textarea type="text" class="form-control" #inputText></textarea>
+        <button class="btn btn-primary" (click)="postDataToFireBase()">Add post request</button>
+    </div> -->
+
+</div>

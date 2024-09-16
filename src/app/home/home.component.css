@@ -1,0 +1,65 @@
+/* .movie-list {
+  display: flex;
+  gap: 10px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.movie-list img {
+  max-width: 150px;
+} */
+
+.container-fluid {
+  background-color: #000000;
+}
+
+.carousel-inner {
+  height: 100vh;
+}
+
+.carousel-inner .carousel-item img {
+  height: 100vh;
+  object-fit: cover;
+}
+
+.mobile-view-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.carousel-caption h3,
+.carousel-caption p {
+  color: #ffffff;
+}
+
+.top-movie-list {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.top-movie-row {
+  width: fit-content;
+}
+
+.top-movie-list::-webkit-scrollbar {
+  display: none;
+}
+
+.top-movie-list img {
+  height: 200px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.top-movie-list img:hover {
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transform: scale(1.2);
+}
+
+.main-div {
+  overflow: hidden;
+}

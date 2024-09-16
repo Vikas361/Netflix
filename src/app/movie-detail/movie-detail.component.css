@@ -1,0 +1,14 @@
+.container-fluid.movie-dtls {
+  height: 100vh;
+}
+
+@media (width <= 500px) {
+  .movie-poster {
+    width: 100%;
+  }
+
+  .movie-dtls-inner {
+    overflow-x: auto;
+    height: 100%;
+  }
+}

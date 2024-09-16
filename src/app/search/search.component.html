@@ -1,0 +1,20 @@
+<div class="container-fluid mt-5 p-md-5 pt-3" [ngStyle]="searchedMoviesList.length ? {} : {'height':'90vh'}">
+    <div class="row ">
+        <div class=" col-md-10 my-2">
+            <input type="text" class="form-control" #movieName placeholder="Search Movie...">
+        </div>
+        <div class=" col-md-2 my-2">
+            <button class="btn btn-danger w-100" (click)="searchMovie(movieName)">Search</button>
+        </div>
+    </div>
+
+    <div class="row mx-1 mt-2 py-2 border rounded-2 d-flex flex-wrap justify-content-center movie-container"
+        *ngIf="searchedMoviesList.length">
+        <div *ngFor="let movie of searchedMoviesList; let index = index" class="movie-list my-2">
+            <img class="border rounded" [src]="imgPrefix + movie.poster_path" alt=""
+                (click)="movieDetailPage(movie, index, 'SearchedMovie')">
+        </div>
+
+    </div>
+
+</div>
